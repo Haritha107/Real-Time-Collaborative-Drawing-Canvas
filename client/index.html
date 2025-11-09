@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>🎨 Real-Time Collaborative Canvas</title>
+  <link rel="stylesheet" href="style.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet" />
+</head>
+<body>
+  <header>
+    <h1>🖌️ Collaborative Drawing Board</h1>
+    <p id="userCount">👥 0 users online</p>
+  </header>
+
+  <div id="toolbar">
+    <div class="tool-group">
+      <label for="color">🎨</label>
+      <input type="color" id="color" value="#000000" />
+    </div>
+
+    <div class="tool-group">
+      <label for="size">🖋️</label>
+      <input type="range" id="size" min="1" max="25" value="4" />
+    </div>
+
+    <div class="buttons">
+      <button id="undo" class="btn">↩️ Undo</button>
+      <button id="redo" class="btn">↪️ Redo</button>
+      <button id="clear" class="btn danger">🧹 Clear</button>
+    </div>
+  </div>
+
+  <main>
+    <canvas id="board" width="1000" height="600"></canvas>
+  </main>
+
+  <footer>
+    <p>💡 Tip: Draw simultaneously with friends in another tab!</p>
+  </footer>
+
+  <script src="/socket.io/socket.io.js"></script>
+  <script src="websocket.js"></script>
+  <script src="canvas.js"></script>
+</body>
+</html>
